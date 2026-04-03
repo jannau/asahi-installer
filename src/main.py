@@ -42,6 +42,7 @@ CHIP_MIN_VER = {
     0x6001: "12.0",     # T6001, M1 Max
     0x6002: "12.3",     # T6002, M1 Ultra
     0x8112: "12.4",     # T8112, M2
+    0x8122: "14.6",     # T8122, M3
     0x6020: "13.1",     # T6020, M2 Pro
     0x6021: "13.1",     # T6021, M2 Max
     0x6022: "13.4",     # T6022, M2 Ultra
@@ -71,6 +72,11 @@ DEVICES = {
     "j475cap":  Device("13.4", False),  # Mac Studio (M2 Max, 2023)
     "j475dap":  Device("13.4", False),  # Mac Studio (M2 Ultra, 2023)
     "j180dap":  Device("13.4", False),  # Mac Pro (M2 Ultra, 2023)
+    "j433ap":   Device("14.6", True),   # iMac (24-inch, M3, 2023)
+    "j434ap":   Device("14.6", True),   # iMac (24-inch, M3, 2023)
+    "j504ap":   Device("14.6", True),   # MacBook Pro (14-inch, M3, 2023)
+    "j613ap":   Device("14.6", True),   # MacBook Air (13-inch, M3, 2023)
+    "j615ap":   Device("14.6", True),   # MacBook Air (15-inch, M3, 2023)
 }
 
 IPSW_VERSIONS = [
@@ -95,6 +101,13 @@ IPSW_VERSIONS = [
          False,
          None,
          "https://updates.cdn-apple.com/2023SummerFCS/fullrestores/032-69606/D3E05CDF-E105-434C-A4A1-4E3DC7668DD0/UniversalMac_13.5_22G74_Restore.ipsw"),
+    IPSW("14.6.1",
+         "14.6",
+         "iBoot-10151.140.19",
+         "23.10.220.0.0,0",
+         True,
+         None,
+         "https://updates.cdn-apple.com/2024SummerFCS/fullrestores/062-52859/932E0A8F-6644-4759-82DA-F8FA8DEA806A/UniversalMac_14.6.1_23G93_Restore.ipsw"),
 ]
 
 class InstallerMain:
