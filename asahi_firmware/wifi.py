@@ -52,6 +52,8 @@ class WiFiFWCollection(object):
             for name in sorted(filenames):
                 if not any(name.endswith("." + i) for i in self.EXTMAP):
                     continue
+                if "_gen" in name:
+                    continue
                 path = os.path.join(dirpath, name)
                 relpath = os.path.join(subpath, name)
                 if not name.endswith(".txt"):
@@ -72,6 +74,8 @@ class WiFiFWCollection(object):
                 for dim in self.DIMS:
                     if dim in props:
                         ident.append(props.pop(dim))
+                if props is None:
+                    log.error(f"empty props for {name} in {dirpath}")
                 assert not props
 
                 node = self.root
